@@ -1,7 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
 app = FastAPI()
 
+templates = Jinja2Templates(directory="templates") 
 
 posts = [
     {
@@ -41,9 +44,9 @@ posts = [
     }
 ]
 
-@app.get("/", response_class=HTMLResponse)
-def Home():
-    return f"<h1>Welcome to the FastAPI Blog!</h1><p>Explore our latest posts at <a href='/api/posts'>/api/posts</a></p>"
+@app.get("/")
+def Home(request: Request):
+    return templates.TemplateResponse(request , "Home.html", {"posts": posts})
 
 @app.get("/api/posts")
 def get_posts():
