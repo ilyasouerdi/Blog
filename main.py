@@ -46,7 +46,7 @@ posts = [
 
 @app.get("/")
 def Home(request: Request):
-    return templates.TemplateResponse(request , "Home.html", {"posts": posts})
+    return templates.TemplateResponse(request , "Home.html", {"posts": posts, "title": "Home"})
 
 @app.get("/api/posts")
 def get_posts():
