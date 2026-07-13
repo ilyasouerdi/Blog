@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if title %}
-        fastAPI Blog - {{ title }}
-        {% else %}
-        fastAPI Blog
-        {% endif %}
-    </title>   
-</head>
-
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <h1>Welcome to the Home Page</h1>
     <p> list of posts </p>
     {% for post in posts%}
@@ -22,7 +9,4 @@
         <p>{{ post.content }}</p>
     </div>
     {% endfor %}
-
-</body>
-
-</html>
+{% endblock content %}
