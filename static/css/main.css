@@ -1,0 +1,288 @@
+/* ==========================
+   Google Font Variables
+========================== */
+
+:root {
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --secondary: #334155;
+
+    --background: #f8fafc;
+    --surface: #ffffff;
+
+    --text: #1e293b;
+    --muted: #64748b;
+
+    --border: #e2e8f0;
+
+    --shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+
+
+/* ==========================
+   Global
+========================== */
+
+body{
+    background: var(--background);
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+    line-height:1.7;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:"Poppins",sans-serif;
+    font-weight:700;
+    color:var(--secondary);
+}
+
+a{
+    text-decoration:none;
+    transition:.25s;
+}
+
+a:hover{
+    color:var(--primary);
+}
+
+
+/* ==========================
+   Navbar
+========================== */
+
+.navbar{
+    padding:.9rem 0;
+}
+
+.navbar-brand{
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.nav-link{
+    color:var(--secondary)!important;
+    font-weight:500;
+    margin-left:.5rem;
+}
+
+.nav-link:hover{
+    color:var(--primary)!important;
+}
+
+
+/* ==========================
+   Hero
+========================== */
+
+section{
+    background:white;
+}
+
+section h1{
+    font-size:3.2rem;
+}
+
+section p{
+    max-width:650px;
+    margin:auto;
+}
+
+
+/* ==========================
+   Buttons
+========================== */
+
+.btn-success{
+
+    background:var(--primary);
+    border:none;
+
+    border-radius:12px;
+
+    padding:.75rem 1.5rem;
+}
+
+.btn-success:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+}
+
+.btn-outline-success{
+
+    border-radius:12px;
+}
+
+
+/* ==========================
+   Cards
+========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.card-body{
+
+    padding:1.6rem;
+}
+
+
+/* ==========================
+   Sidebar
+========================== */
+
+.list-group-item{
+
+    border:none;
+
+    border-bottom:1px solid var(--border);
+
+    padding:.9rem 0;
+
+    background:transparent;
+}
+
+.list-group-item:last-child{
+
+    border:none;
+}
+
+
+/* ==========================
+   Blog Posts
+========================== */
+
+.article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:var(--shadow);
+}
+
+.article-title{
+
+    color:var(--secondary);
+
+    font-size:1.8rem;
+}
+
+.article-title:hover{
+
+    color:var(--primary);
+}
+
+.article-meta{
+
+    color:var(--muted);
+
+    font-size:.9rem;
+
+    margin-bottom:15px;
+}
+
+.article-content{
+
+    color:#475569;
+}
+
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    margin-top:70px;
+}
+
+footer h5{
+
+    color:white;
+}
+
+
+/* ==========================
+   Forms
+========================== */
+
+.form-control{
+
+    border-radius:12px;
+
+    padding:.8rem;
+
+    border:1px solid var(--border);
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .2rem rgba(16,185,129,.2);
+}
+
+
+/* ==========================
+   Images
+========================== */
+
+img{
+
+    max-width:100%;
+}
+
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+    section h1{
+
+        font-size:2.5rem;
+    }
+
+    .navbar-nav{
+
+        margin-top:15px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:50px 20px;
+    }
+
+    section h1{
+
+        font-size:2rem;
+    }
+
+}

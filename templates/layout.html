@@ -1,22 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if title %}
-        fastAPI Blog - {{ title }}
-        {% else %}
-        fastAPI Blog
-        {% endif %}
-    </title>   
+
+    {% if title %}
+        <title>DevJournal | {{ title }}</title>
+    {% else %}
+        <title>DevJournal</title>
+    {% endif %}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='css/main.css') }}">
 </head>
 
 <body>
-    {% block content %}
-    {% endblock content %}
+
+<header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold fs-3 text-success"
+href="{{ url_for('Home') }}">
+DevJournal
+</a>
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav me-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="{{ url_for('Home') }}">
+Home
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">
+Articles
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">
+Categories
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">
+About
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<section class="bg-light py-5 border-bottom">
+
+<div class="container text-center">
+
+<h1 class="display-4 fw-bold mb-3">
+Learn. Build. Share.
+</h1>
+
+<p class="lead text-secondary">
+A place where developers publish tutorials,
+projects and programming tips.
+</p>
+
+<a href="#posts"
+class="btn btn-success btn-lg mt-3">
+Explore Articles
+</a>
+
+</div>
+
+</section>
+
+
+<main class="container my-5">
+
+<div class="row">
+
+<div class="col-lg-8">
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+
+<div class="col-lg-4">
+
+<div class="card shadow-sm mb-4">
+
+<div class="card-body">
+
+<h4 class="mb-3">About</h4>
+
+<p class="text-muted">
+DevJournal is a community dedicated to
+Python, FastAPI, Docker, SQL,
+and backend development.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card shadow-sm mb-4">
+
+<div class="card-body">
+
+<h4 class="mb-3">Categories</h4>
+
+<ul class="list-group list-group-flush">
+
+<li class="list-group-item">Python</li>
+<li class="list-group-item">FastAPI</li>
+<li class="list-group-item">JavaScript</li>
+<li class="list-group-item">SQL</li>
+<li class="list-group-item">Docker</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="card shadow-sm">
+
+<div class="card-body">
+
+<h4 class="mb-3">Popular Posts</h4>
+
+<ul class="list-unstyled">
+
+<li class="mb-2">
+<a href="#">Getting Started with FastAPI</a>
+</li>
+
+<li class="mb-2">
+<a href="#">Understanding SQLAlchemy</a>
+</li>
+
+<li class="mb-2">
+<a href="#">JWT Authentication</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+<footer class="bg-dark text-white py-4 mt-5">
+
+<div class="container text-center">
+
+<h5 class="mb-2">DevJournal</h5>
+
+<p class="text-secondary mb-2">
+Sharing knowledge one article at a time.
+</p>
+
+<small>
+© 2026 DevJournal. Built with FastAPI & Bootstrap.
+</small>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+{% block scripts %}
+{% endblock %}
 
 </body>
-
 </html>
