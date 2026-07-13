@@ -98,6 +98,10 @@ a{
 /* ==========================
    HERO
 ========================== */
+.container-fluid {
+    padding-left: 80px;
+    padding-right: 80px;
+}
 
 .hero-section{
 
@@ -106,6 +110,7 @@ a{
         #14532D,
         #166534
     );
+    width: 100%;
 
     border-radius:28px;
 
@@ -455,5 +460,7 @@ footer small{
 
     font-size:1.6rem;
 }
-
+body {
+    margin: 0 10px;
+}
 }
